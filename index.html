@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twenty-ish — Minimal Blog</title>
+  <meta name="description" content="A minimal, typography-first blog layout inspired by Twenty Twenty-Five." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#" class="site-title">Twenty‑ish</a>
+      <nav class="primary-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul id="main-menu" class="menu">
+          <li><a class="is-current" href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">A calm, readable canvas for your words</h1>
+        <p class="hero-subtitle">Typography‑first. Accessible by default. Clean, responsive, and GitHub‑friendly.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#">Start reading</a>
+          <a class="btn btn-ghost" href="#">View on GitHub</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 800 240" preserveAspectRatio="none" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" />
+              <stop offset="100%" />
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="800" height="240" fill="url(#g1)"></rect>
+          <circle cx="120" cy="120" r="90" class="dot"></circle>
+          <circle cx="420" cy="80" r="40" class="dot"></circle>
+          <circle cx="700" cy="160" r="70" class="dot"></circle>
+        </svg>
+      </div>
+    </section>
+
+    <section class="grid-section container">
+      <header class="section-header">
+        <h2>Latest</h2>
+        <a href="#" class="link-more">See all posts →</a>
+      </header>
+
+      <div class="post-grid">
+        <article class="card">
+          <a class="card-media" href="#" aria-label="Read: Designing for clarity">
+            <div class="media-placeholder" aria-hidden="true"></div>
+          </a>
+          <div class="card-body">
+            <p class="eyebrow">Design • 6 min read</p>
+            <h3 class="card-title"><a href="#">Designing for clarity</a></h3>
+            <p class="card-excerpt">Thoughtful whitespace and measured contrast keep your words in focus.</p>
+            <a class="card-read" href="#">Read more</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-media" href="#" aria-label="Read: Fluid type scales">
+            <div class="media-placeholder" aria-hidden="true"></div>
+          </a>
+          <div class="card-body">
+            <p class="eyebrow">Frontend • 4 min read</p>
+            <h3 class="card-title"><a href="#">Fluid type scales</a></h3>
+            <p class="card-excerpt">Use clamp() to keep typography beautifully responsive without breakpoints.</p>
+            <a class="card-read" href="#">Read more</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-media" href="#" aria-label="Read: Accessible color systems">
+            <div class="media-placeholder" aria-hidden="true"></div>
+          </a>
+          <div class="card-body">
+            <p class="eyebrow">A11y • 7 min read</p>
+            <h3 class="card-title"><a href="#">Accessible color systems</a></h3>
+            <p class="card-excerpt">Meet WCAG with semantic tokens and automatic dark‑mode fallbacks.</p>
+            <a class="card-read" href="#">Read more</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-media" href="#" aria-label="Read: Writing, not fiddling">
+            <div class="media-placeholder" aria-hidden="true"></div>
+          </a>
+          <div class="card-body">
+            <p class="eyebrow">Writing • 3 min read</p>
+            <h3 class="card-title"><a href="#">Writing, not fiddling</a></h3>
+            <p class="card-excerpt">Opinionated defaults so you can focus on publishing.</p>
+            <a class="card-read" href="#">Read more</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta container">
+      <div class="cta-inner">
+        <h2>Ready to publish?</h2>
+        <p>Fork this starter, write a post, and ship. No build tools required.</p>
+        <a class="btn" href="#">Get started</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="y"></span> Twenty‑ish. Built with semantic HTML & modern CSS.</p>
+      <ul class="social">
+        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+        <li><a href="#" aria-label="RSS">RSS</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // basic enhancement: nav toggle + dynamic year
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('main-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('is-open');
+      });
+    }
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
